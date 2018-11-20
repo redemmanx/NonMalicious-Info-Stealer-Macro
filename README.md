@@ -11,3 +11,4 @@ Tested with
 Windows Defender 10 - may catch but changing the content of the doc will do the trick.
 Panda Adaptive Defense 360 - will miss it.
 SentinelOne - Will catch it due to the behavior of the document.
+
