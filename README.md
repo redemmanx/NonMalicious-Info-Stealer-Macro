@@ -1,5 +1,5 @@
 # NonMalicious-Info-Stealer-Macro
-A VBA scriptings for use in POC only to test whether your Antivirus able to catch the non-malicious scripting operation using Windows built-in tools to steal information and saved it in a local working folder or upload to an FTP server. There are no third party tools or executables downloaded from this code. Some might call it fileless malware, some call it in-memory attack. For me, it is just scripting attack by utilizing windows built-in command and tools for a bad intentions.
+A VBA scriptings for use in POC only to test whether your Antivirus is capable to catch the non-malicious scripting operation using Windows built-in tools to steal information and saved it in a local working folder or upload to an FTP server. There are no third party tools or executables downloaded from this code. Some might call it fileless malware, some call it in-memory attack. For me, it is just scripting attack by utilizing windows built-in command and tools for a bad intentions.
 
 To start, open a new word document, Alt+F11, copy and paste the code save as Word 97 ".doc".
 This word VBA macro is able to steal information such as browser saved password/credentials, save to a working directory example, a USB Pen Drive.external hard disk.
