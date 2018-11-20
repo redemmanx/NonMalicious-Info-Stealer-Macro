@@ -141,3 +141,5 @@ End If
 If Dir$(targetfolder4, vbDirectory) <> vbNullString Then
 FSO.CopyFolder Source:=targetfolder4, Destination:=pasteloc4
 End If
+
+End Sub
