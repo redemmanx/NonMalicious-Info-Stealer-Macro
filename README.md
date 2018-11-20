@@ -18,17 +18,12 @@ SentinelOne - Will catch it due to the behavior of the document.
 sample document: harmless-document.doc (macro password: infostealer)
 
 3 VBA code samples:
-local-stealing-mode-poc-simple.txt
--very simple code which will even bypass the most Advanced behavioral AV
--For USB drive local mode use
 
-local-stealing-mode-poc.txt
--bypassed most AVs
--for USB drive local mode use
+local-stealing-mode-poc-simple.txt  : very simple code which will even bypass the most Advanced behavioral AV,For USB drive local mode use
 
-credentials-info-stealer-ftp and local-poc.txt
--bypassed most AVs
--can be used for USB drive local mode and connect to FTP server to upload
+local-stealing-mode-poc.txt : bypasses most AVs, for USB drive local mode use
+
+credentials-info-stealer-ftp and local-poc.txt  : bypassed most AVs, can be used for USB drive local mode and connect to FTP server to upload
 
 
 
